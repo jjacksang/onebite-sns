@@ -1,6 +1,7 @@
 import supabase from "@/lib/supabase";
 import type { Provider } from "@supabase/supabase-js";
 
+// 회원가입
 export async function signUp({
   email,
   password,
@@ -17,6 +18,7 @@ export async function signUp({
   return data;
 }
 
+// 로그인
 export async function signInWithPassword({
   email,
   password,
@@ -33,6 +35,7 @@ export async function signInWithPassword({
   return data;
 }
 
+// 소셜 로그인
 export async function signInWithOAuth(provider: Provider) {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider,
