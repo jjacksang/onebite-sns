@@ -1,5 +1,4 @@
-import { HeartIcon, MessageCircle } from "lucide-react";
-import type { Post } from "@/types";
+import { MessageCircle } from "lucide-react";
 import defaultAvatar from "@/assets/default-avatar.jpg";
 import {
   Carousel,
@@ -32,7 +31,7 @@ export default function PostItem({
     isPending,
   } = usePostByIdData({
     postId,
-    type: "FEED",
+    type,
   });
 
   if (isPending) return <Loader />;
